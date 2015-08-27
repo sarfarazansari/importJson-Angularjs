@@ -35,13 +35,11 @@ app.factory('getJsonFileService', [
 
 //create controller
 app.controller('someController', ['$scope', 'getJsonFileService',
-	function ($scope, getJsonFileService){
-  	console.log('someController init');
-
-  	var vm = this;
+  function ($scope, getJsonFileService){
+    console.log('someController init');
+    var vm = this;
     vm.jsonDataArray = [];
     vm.simpleMode = false;
-
     vm.getJsonData = function () {
         getJsonFileService.getJsonData()
 	        .then(function (data) {
@@ -53,9 +51,7 @@ app.controller('someController', ['$scope', 'getJsonFileService',
 	            console.log('jsonDataArray retrieval failed.');
 	        });
     };
-
     //init function
     vm.getJsonData();
-
-	}
+ }
 ]);
